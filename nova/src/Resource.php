@@ -62,14 +62,14 @@ abstract class Resource implements ArrayAccess, JsonSerializable, UrlRoutable
      *
      * @var string
      */
-    public static $group = 'Other';
+    public static string $group = 'Other';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'id';
+    public static string $title = 'id';
 
     /**
      * The relationships that should be eager loaded when performing an index query.
@@ -83,7 +83,7 @@ abstract class Resource implements ArrayAccess, JsonSerializable, UrlRoutable
      *
      * @var array
      */
-    public static $search = [];
+    public static array $search = [];
 
     /**
      * Indicates if the resource should be displayed in the sidebar.
@@ -167,7 +167,7 @@ abstract class Resource implements ArrayAccess, JsonSerializable, UrlRoutable
      *
      * @var bool
      */
-    public static $preventFormAbandonment = false;
+    public static bool $preventFormAbandonment = false;
 
     /**
      * The maximum value of the resource's primary key column.
@@ -195,7 +195,7 @@ abstract class Resource implements ArrayAccess, JsonSerializable, UrlRoutable
      *
      * @var bool
      */
-    public static $showPollingToggle = false;
+    public static bool $showPollingToggle = false;
 
     /**
      * The debounce amount to use when searching this resource.

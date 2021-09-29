@@ -10,35 +10,18 @@ use Laravel\Nova\Fields\Text;
 
 class User extends Resource
 {
-    /**
-     * The model the resource corresponds to.
-     *
-     * @var string
-     */
     public static $model = \App\Models\User::class;
 
-    /**
-     * The single value that should be used to represent the resource when being displayed.
-     *
-     * @var string
-     */
-    public static $title = 'name';
+    public static string $title = '管理员用户';
 
-    /**
-     * The columns that should be searched.
-     *
-     * @var array
-     */
-    public static $search = [
+    public static string $group = '后台设置';
+
+    public static bool $showPollingToggle = true;
+    public static bool $preventFormAbandonment = true;
+    public static array $search = [
         'id', 'name', 'email',
     ];
 
-    /**
-     * Get the fields displayed by the resource.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return array
-     */
     public function fields(Request $request)
     {
         return [
@@ -62,6 +45,7 @@ class User extends Resource
                 ->updateRules('nullable', 'string', 'min:8'),
         ];
     }
+
 
     /**
      * Get the cards available for the request.
